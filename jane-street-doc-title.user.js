@@ -15,11 +15,23 @@
 // #bccurpkgmod
 
 // This can guard the text
-if ("undefined" === typeof (document.getElementById("bccurpkg").firstChild.text)) {
+function updateTitle() {
+    if ("undefined" ===
+        typeof (document.getElementById("bccurpkg").firstChild.text)) {
+        return false;
+    } else {
+        var pkg = document.getElementById("bccurpkg").firstChild.text;
+        var module = document.getElementById("bccurpkgmod").firstChild.wholeText;
 
-    var pkg = document.getElementById("bccurpkg").firstChild.text;
-    var module = document.getElementById("bccurpkgmod").firstChild;
-
-    document.title = pkg + "/" + module;
-
+        document.title = pkg + "/" + module;
+        return true;
+    }
 }
+
+function tryUpdateTitle() {
+    if (!updateTitle()) {
+        window.setTimeout(tryUpdateTitle, 500);
+    }
+}
+
+tryUpdateTitle();
