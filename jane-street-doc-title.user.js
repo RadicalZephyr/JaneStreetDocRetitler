@@ -11,6 +11,15 @@
 
 // Ids:
 // #bccurpkg
-// document.getElementById("bccurpkg").firstChild.text
+
 // #bccurpkgmod
-// document.getElementById("bccurpkgmod").firstChild
+
+// This can guard the text
+if ("undefined" === typeof (document.getElementById("bccurpkg").firstChild.text)) {
+
+    var pkg = document.getElementById("bccurpkg").firstChild.text;
+    var module = document.getElementById("bccurpkgmod").firstChild;
+
+    document.title = pkg + "/" + module;
+
+}
