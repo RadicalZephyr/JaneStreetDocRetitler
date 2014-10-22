@@ -1,5 +1,5 @@
-JaneStreetDocRetitler
-=====================
+Jane Street Documentation Retitler
+==================================
 
 Userscript for "fixing" the Jane Street ocaml documentation page titles.
 
